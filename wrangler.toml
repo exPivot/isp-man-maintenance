@@ -1,7 +1,12 @@
-name = "custom-headers-example"
-type = "javascript"
+name = "ispm-man-maintenance"
+main = "index.js"
+compatibility_date = "2025-08-28"
 
-account_id = "FILL-IN-YOUR-ACCOUNT-ID"
-workers_dev = false
-route = "FILL-IN-YOUR-WEBSITE.com/*"
-zone_id = "FILL-IN-YOUR-ZONE-ID"
+# You'll need to fill in your actual account_id, route, and zone_id
+# account_id = "YOUR-ACCOUNT-ID"
+# workers_dev = false
+# route = "your-website.com/*"
+# zone_id = "YOUR-ZONE-ID"
+
+# For development, you can use workers_dev = true to deploy to workers.dev subdomain
+workers_dev = true
