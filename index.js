@@ -102,8 +102,8 @@ async function handleRequest(request) {
             // Set to 2 AM UTC today
             target.setUTCHours(2, 0, 0, 0);
             
-            // If it's already past 2 AM UTC today, set to 2 AM UTC tomorrow
-            if (now.getTime() >= target.getTime()) {
+            // If current UTC time is already past 2 AM UTC today, set to 2 AM UTC tomorrow
+            if (now.getUTCHours() >= 2) {
                 target.setUTCDate(target.getUTCDate() + 1);
             }
             
