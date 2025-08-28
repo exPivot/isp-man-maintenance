@@ -106,12 +106,12 @@ async function handleRequest(request) {
             if (diff <= 0) {
                 // Reset to 24 hours from now
                 dest = new Date();
-                dest.setHours(dest.getHours() + 24);
+                dest.setHours(dest.getHours() + 2);
                 return;
             }
 
-            let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let days = Math.floor(diff / (1000 * 60 * 60 * 2));
+            let hours = Math.floor((diff % (1000 * 60 * 60 * 2)) / (1000 * 60 * 60));
             let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             let seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
