@@ -3,37 +3,6 @@ addEventListener('fetch', event => {
 })
 
 async function handleRequest(request) {
-  const url = new URL(request.url)
-  
-  // Handle favicon.ico requests
-  if (url.pathname === '/favicon.ico') {
-    // Return a simple ICO favicon (you can replace this with your base64 encoded favicon)
-    const faviconResponse = new Response(null, {
-      status: 204,
-      headers: {
-        'Content-Type': 'image/x-icon',
-        'Cache-Control': 'public, max-age=86400'
-      }
-    })
-    return faviconResponse
-  }
-  
-  // Handle logo.png requests  
-  if (url.pathname === '/logo.png') {
-    // For demonstration, return a simple SVG logo as PNG alternative
-    // You should replace this with your actual base64 encoded logo
-    const svgLogo = `<svg width="120" height="60" xmlns="http://www.w3.org/2000/svg">
-      <rect width="120" height="60" fill="#dc8100"/>
-      <text x="60" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">ISPMAN</text>
-    </svg>`
-    
-    return new Response(svgLogo, {
-      headers: {
-        'Content-Type': 'image/svg+xml',
-        'Cache-Control': 'public, max-age=86400'
-      }
-    })
-  }
   // Return the maintenance page HTML
   const maintenanceHTML = `
     <!doctype html>
@@ -42,7 +11,7 @@ async function handleRequest(request) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Maintenance - ISPMAN</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://static.ispman.tech/favicon.ico">
     <style>
         body { 
             text-align: center; 
@@ -107,7 +76,7 @@ async function handleRequest(request) {
 </head>
 <body>
     <div class="container">
-        <img src="/logo.png" alt="ISPMAN Logo" class="logo" onerror="this.style.display='none'">
+        <img src="https://static.ispman.tech/logo.png" alt="ISPMAN Logo" class="logo" onerror="this.style.display='none'">
         <h1>We&rsquo;ll be back soon!</h1>
         <div class="content">
             <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:support@ispman.tech">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
