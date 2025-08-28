@@ -46,7 +46,7 @@ async function handleRequest(request) {
             line-height: 1.6;
         }
         a { 
-            color: #dc8100; 
+            color: #0083FE; 
             text-decoration: none; 
             font-weight: 500;
         }
@@ -64,7 +64,7 @@ async function handleRequest(request) {
             border-radius: 8px;
             padding: 25px;
             margin: 25px 0;
-            border-left: 4px solid #dc8100;
+            border-left: 4px solid #0083FE;
         }
         .contact-item {
             margin: 12px 0;
@@ -75,7 +75,7 @@ async function handleRequest(request) {
             margin-right: 8px;
         }
         .contact-item a {
-            color: #dc8100;
+            color: #0083FE;
             text-decoration: none;
             font-weight: 600;
             padding: 8px 12px;
@@ -85,11 +85,11 @@ async function handleRequest(request) {
             margin-left: 5px;
         }
         .contact-item a:hover {
-            background: #dc8100;
+            background: #0083FE;
             color: white;
             text-decoration: none;
             transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(220, 129, 0, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 131, 254, 0.3);
         }
         @media (max-width: 768px) {
             .container {
