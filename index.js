@@ -94,23 +94,18 @@ async function handleRequest(request) {
     </section>
 
     <script>
-        // Countdown timer - Set target to 2 AM UTC
-        function getNext2AMUTC() {
+        // Countdown timer - Count down to end of current hour
+        function getNextHourEnd() {
             let now = new Date();
             let target = new Date();
             
-            // Set to 2 AM UTC today
-            target.setUTCHours(2, 0, 0, 0);
-            
-            // If current UTC time is already past 2 AM UTC today, set to 2 AM UTC tomorrow
-            if (now.getUTCHours() >= 2) {
-                target.setUTCDate(target.getUTCDate() + 1);
-            }
+            // Set target to the end of the current hour (start of next hour)
+            target.setHours(now.getHours() + 1, 0, 0, 0);
             
             return target;
         }
         
-        let dest = getNext2AMUTC();
+        let dest = getNextHourEnd();
 
         let x = setInterval(function () {
             let now = new Date().getTime();
@@ -118,8 +113,8 @@ async function handleRequest(request) {
 
             // Check if the countdown has reached zero or negative
             if (diff <= 0) {
-                // Reset to next 2 AM UTC
-                dest = getNext2AMUTC();
+                // Reset to end of next hour
+                dest = getNextHourEnd();
                 return;
             }
 
