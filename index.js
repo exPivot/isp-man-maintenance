@@ -59,6 +59,38 @@ async function handleRequest(request) {
             margin-top: 30px;
             color: #666;
         }
+        .contact-info {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #dc8100;
+        }
+        .contact-item {
+            margin: 12px 0;
+            font-size: 18px;
+        }
+        .contact-item strong {
+            color: #2c3e50;
+            margin-right: 8px;
+        }
+        .contact-item a {
+            color: #dc8100;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .contact-item a:hover {
+            background: #dc8100;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(220, 129, 0, 0.3);
+        }
         @media (max-width: 768px) {
             .container {
                 margin: 20px;
@@ -71,6 +103,20 @@ async function handleRequest(request) {
                 font-size: 18px;
                 padding: 20px 10px;
             }
+            .contact-info {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            .contact-item {
+                margin: 15px 0;
+                font-size: 16px;
+            }
+            .contact-item a {
+                display: block;
+                text-align: center;
+                margin: 8px 0 0 0;
+                padding: 12px;
+            }
         }
     </style>
 </head>
@@ -79,7 +125,18 @@ async function handleRequest(request) {
         <img src="https://static.ispman.tech/logo.png" alt="ISPMAN Logo" class="logo" onerror="this.style.display='none'">
         <h1>We&rsquo;ll be back soon!</h1>
         <div class="content">
-            <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:support@ispman.tech">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
+            <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need immediate assistance, you can reach us:</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>📧 Email:</strong> <a href="mailto:support@ispman.co.ke">support@ispman.co.ke</a>
+                </div>
+                <div class="contact-item">
+                    <strong>📞 Phone:</strong> <a href="tel:+254796777333">+254 796 777 333</a>
+                </div>
+            </div>
+            
+            <p>Otherwise we&rsquo;ll be back online shortly!</p>
             <p class="team-signature">&mdash; The ISPMAN Team</p>
         </div>
     </div>
