@@ -73,7 +73,7 @@ async function handleRequest(request) {
                                 <span class="px-1.5 text-white text-sm font-medium leading-6 whitespace-nowrap">Notify Me</span>
                             </button>
                         </div>
-                         <img src="https://static.expivot.tech/maintenance-mode-hero.png" alt="under maintenance image" class="object-cover mt-8 max-w-full h-auto">
+                         <img src="https://static.ispman.tech/maintenance-mode-hero.png" alt="under maintenance image" class="object-cover mt-8 max-w-full h-auto">
                         <div class="mt-6 text-center">
                             <p class="text-gray-600 text-sm mb-3">Need immediate assistance? Reach us:</p>
                             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
