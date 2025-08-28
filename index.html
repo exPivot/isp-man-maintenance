@@ -1,11 +1,6 @@
-addEventListener('fetch', event => {
-    event.respondWith(handleRequest(event.request))
-})
 
-async function handleRequest(request) {
-    // Return the maintenance page HTML
-    const maintenanceHTML = `
-     <!doctype html>
+
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -97,11 +92,11 @@ async function handleRequest(request) {
         // Countdown timer
         let dest = new Date();
         dest.setHours(dest.getHours() + 24); // Set countdown for 24 hours from now
-
+        
         let x = setInterval(function () {
             let now = new Date().getTime();
             let diff = dest.getTime() - now;
-
+            
             // Check if the countdown has reached zero or negative
             if (diff <= 0) {
                 // Reset to 24 hours from now
@@ -151,14 +146,14 @@ async function handleRequest(request) {
                 alert('Please enter your email address');
                 return;
             }
-
+            
             // Basic email validation
             const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
             if (!emailRegex.test(email)) {
                 alert('Please enter a valid email address');
                 return;
             }
-
+            
             // Store email (in a real implementation, you'd send this to your backend)
             localStorage.setItem('notificationEmail', email);
             document.getElementById('emailInput').value = '';
@@ -168,14 +163,4 @@ async function handleRequest(request) {
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"97672aa75cb68a65","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"a22aa7dbc53e4a32942193235c21c5d0"}' crossorigin="anonymous"></script>
 </body>
 </html>
-
-    `
-
-    return new Response(maintenanceHTML, {
-        headers: {
-            'content-type': 'text/html;charset=UTF-8',
-            'cache-control': 'no-cache'
-        },
-        status: 503 // Service Unavailable
-    })
-}
+    
